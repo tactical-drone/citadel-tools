@@ -70,7 +70,7 @@ fn deploy_artifacts() -> Result<()> {
     let run_images = Path::new(IMAGE_DIRECTORY);
     if !run_images.exists() {
         fs::create_dir_all(run_images)?;
-        cmd!("/bin/mount", "-t tmpfs -o size=4g images /run/citadel/images")?;
+        cmd!("/bin/mount", "-t tmpfs -o size=6g images /run/citadel/images")?;
     }
 
     for entry in fs::read_dir("/boot/images")? {
